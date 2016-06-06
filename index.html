@@ -1,72 +1,23 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset='utf-8'>
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <meta name="viewport" content="width=640">
+---
+layout: default
+---
 
-    <link rel="stylesheet" href="stylesheets/core.css" media="screen">
-    <link rel="stylesheet" href="stylesheets/mobile.css" media="handheld, only screen and (max-device-width:640px)">
-    <link rel="stylesheet" href="stylesheets/github-light.css">
+<div class="home">
 
-    <script type="text/javascript" src="javascripts/modernizr.js"></script>
-    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-    <script type="text/javascript" src="javascripts/headsmart.min.js"></script>
-    <script type="text/javascript">
-      $(document).ready(function () {
-        $('#main_content').headsmart()
-      })
-    </script>
-    <title>Pagegeneratortest by StatikUser</title>
-  </head>
+  <h1 class="page-heading">Posts</h1>
 
-  <body>
-    <a id="forkme_banner" href="https://github.com/StatikUser/pagegeneratortest">View on GitHub</a>
-    <div class="shell">
+  <ul class="post-list">
+    {% for post in site.posts %}
+      <li>
+        <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
 
-      <header>
-        <span class="ribbon-outer">
-          <span class="ribbon-inner">
-            <h1>Pagegeneratortest</h1>
-            <h2>Yolo</h2>
-          </span>
-          <span class="left-tail"></span>
-          <span class="right-tail"></span>
-        </span>
-      </header>
+        <h2>
+          <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+        </h2>
+      </li>
+    {% endfor %}
+  </ul>
 
-      <section id="downloads">
-        <span class="inner">
-          <a href="https://github.com/StatikUser/pagegeneratortest/zipball/master" class="zip"><em>download</em> .ZIP</a><a href="https://github.com/StatikUser/pagegeneratortest/tarball/master" class="tgz"><em>download</em> .TGZ</a>
-        </span>
-      </section>
+  <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
 
-
-      <span class="banner-fix"></span>
-
-
-      <section id="main_content">
-        <h1>
-<a id="google-map" class="anchor" href="#google-map" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Google map</h1>
-
-<iframe src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d100921.8397227734!2d-122.50711698562192!3d37.77111185957552!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1sGithub!5e0!3m2!1sen!2sus!4v1464784986282" width="400" height="300" frameborder="0" style="border:0" allowfullscreen></iframe>
-
-      </section>
-
-      <footer>
-        <span class="ribbon-outer">
-          <span class="ribbon-inner">
-            <p>this project by <a href="https://github.com/StatikUser">StatikUser</a> can be found on <a href="https://github.com/StatikUser/pagegeneratortest">GitHub</a></p>
-          </span>
-          <span class="left-tail"></span>
-          <span class="right-tail"></span>
-        </span>
-        <p>Generated with <a href="https://pages.github.com">GitHub Pages</a> using Merlot</p>
-        <span class="octocat"></span>
-      </footer>
-
-    </div>
-
-    
-  </body>
-</html>
+</div>
